@@ -8,21 +8,36 @@ const hbs = exphbs.create({
     extname:"hbs"
 })
 
+
+app.use(express.static('public'))
+
 app.engine("hbs",hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views','views')
 
 
 app.get('/', (req,res) => {
-    res.render('index')
+    res.render('index',{
+        title:"MAIN PAGE",
+        isHome:"true"
+    })
 })
 
-app.get('/about', (req,res) => {
-    res.render('about')
+app.get('/info', (req,res) => {
+    res.render('info', {
+        title:"INFO PAGE",
+        isInfo:"true"
+    })
+})
+app.get('/test', (req,res) => {
+    res.render('test', {
+        title:"TEST PAGE",
+        isTest:"true"
+    })
 })
 
 
-const PORT = process.env.PORT || 3004
+const PORT = process.env.PORT || 3006
 app.listen(PORT, () => {
     console.log(`server starting on port: ${PORT}`)
 })

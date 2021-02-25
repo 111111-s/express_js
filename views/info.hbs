@@ -1,17 +1,17 @@
 <h1>Info</h1>
-<form action="/add" method="POST">
+<form action="/info" method="POST">
     <div class="input-field">
-          <input id="title" type="text" class="validate" required>
+          <input id="title" name="title" type="text" class="validate" required>
           <label for="title">INFO</label>
           <span class="helper-text" data-error="input correct info" data-success="right">Input info</span>
     </div>
     <div class="input-field">
-          <input id="price" type="number" class="validate" required min="1">
+          <input id="price" name="price" type="number" class="validate" required min="1">
           <label for="price">PRICE</label>
           <span class="helper-text" data-error="input correct price" data-success="right">Input price</span>
     </div>
     <div class="input-field">
-          <input id="img" type="text" class="validate" required>
+          <input id="img" name="img" type="text" class="validate" required>
           <label for="img">Url img</label>
           <span class="helper-text" data-error="input correct url" data-success="right">Input url img</span>
     </div>

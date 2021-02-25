@@ -20,13 +20,13 @@ app.use(express.static('public'))
 app.engine("hbs",hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views','views')
-
+app.use(express.urlencoded({extended:true}))
 app.use("/",Homeroutes)
 app.use("/test",Testroutes)
 app.use("/info",Inforoutes)
 
 
-const PORT = process.env.PORT || 3006
+const PORT = process.env.PORT || 3008
 app.listen(PORT, () => {
     console.log(`server starting on port: ${PORT}`)
 })
